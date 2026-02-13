@@ -5,15 +5,11 @@ interface Resume {
 }
 
 class Teacher implements Resume {
+
     String name;
     String qualification;
     int experience;
 
-    Teacher(String name, String qualification, int experience) {
-        this.name = name;
-        this.qualification = qualification;
-        this.experience = experience;
-    }
     public void biodata() {
         System.out.println("Name: " + name);
         System.out.println("Qualification: " + qualification);
@@ -22,17 +18,17 @@ class Teacher implements Resume {
 }
 
 public class InterfaceResume {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        String name = sc.nextLine();
-        String qualification = sc.nextLine();
-        int experience = sc.nextInt();
+        Teacher teacher = new Teacher();
 
-        Teacher Tr = new Teacher(name, qualification, experience);
+        teacher.name = sc.nextLine();
+        teacher.qualification = sc.nextLine();
+        teacher.experience = sc.nextInt();
 
-        Tr.biodata();
-
-        sc.close();
+        teacher.biodata();
     }
 }
